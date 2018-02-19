@@ -9,6 +9,7 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.event.EventHandler;
+import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockBreakEvent;
 import org.bukkit.inventory.ItemStack;
@@ -76,7 +77,7 @@ public class FlowerPotBreaker extends JavaPlugin implements Listener {
 		return true;
 	}
 	
-	@EventHandler
+	@EventHandler (priority = EventPriority.LOWEST)
 	public void onBreak(BlockBreakEvent e) {
 		// 检测破坏方块以及是否在禁用世界内以及生存模式
 		if (e.getBlock().getState() instanceof FlowerPot && !getConfig().getStringList("DisableWorld").contains(e.getPlayer().getWorld().getName()) && e.getPlayer().getGameMode() == GameMode.SURVIVAL) {
