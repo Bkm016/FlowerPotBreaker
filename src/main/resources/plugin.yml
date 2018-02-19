@@ -1,0 +1,10 @@
+name: FlowerPotBreaker
+main: me.skymc.flowerpot.FlowerPotBreaker
+version: {$VERSION}
+
+depend: [TabooLib]
+
+commands:
+  flowerpotbreaker:
+    aliases: [flowerpot]
+    permission: flowerpotbreaker.admin

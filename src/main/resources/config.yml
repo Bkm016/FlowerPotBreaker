@@ -1,0 +1,14 @@
+# 刷新时间（单位：秒）
+UpdateDelay: 600
+
+# 禁用世界
+DisableWorld:
+- 'disable_world_name'
+
+# 掉落物（几率 物品）
+# ------------------------------------ #
+# 物品由 TabooLib 提供，帮助：
+# https://github.com/bkm016/TabooLib_Demo/wiki
+# ------------------------------------ #
+Drops:
+- '0.2 SpeedPotion'
