@@ -1,6 +1,7 @@
 package me.skymc.flowerpot;
 
 import org.bukkit.Bukkit;
+import org.bukkit.Effect;
 import org.bukkit.GameMode;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
@@ -77,6 +78,7 @@ public class FlowerPotBreaker extends JavaPlugin implements Listener {
 		return true;
 	}
 	
+	@SuppressWarnings("deprecation")
 	@EventHandler (priority = EventPriority.LOWEST)
 	public void onBreak(BlockBreakEvent e) {
 		// 检测破坏方块以及是否在禁用世界内以及生存模式
@@ -105,6 +107,7 @@ public class FlowerPotBreaker extends JavaPlugin implements Listener {
 			
 			// 删除花盆
 			e.getBlock().setType(Material.AIR);
+			e.getBlock().getWorld().playEffect(e.getBlock().getLocation(), Effect.STEP_SOUND, e.getBlock().getTypeId());
 			
 			// 掉落物品
 			for (String dropStr : getConfig().getStringList("Drops")) {
